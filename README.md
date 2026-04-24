@@ -23,6 +23,9 @@
 - **Nearby Medical Facilities**: Locates local doctors, pharmacies, hospitals, urgent care centers, and clinics based on the user's location.
 - **Emergency Escalation**: Detects high-risk keywords and redirects users to emergency services.
 - **Smart Fallback**: Clarifies user intent and presents a menu when input is unclear.
+- **Voice Interaction**: CareGuide now supports voice-based interactions. Users can speak to CareGuide and receive spoken responses in return. This feature ensures a natural, conversational experience.
+- **Multilingual Support**: CareGuide can communicate in all 11 official South African languages, including English, Zulu, Xhosa, Afrikaans, Sepedi, Setswana, Sesotho, Tsonga, Swati, Venda, and Ndebele. It detects the user's language automatically and responds accordingly.
+
 
 ---
 
@@ -100,6 +103,7 @@ Triggered when a user asks to find a doctor, pharmacy, hospital, clinic, or any 
 5. For mental health requests: include nearby mental health clinics/counselors **and** the regional crisis hotline
 
 ---
+
 
 ## Data Handling
 

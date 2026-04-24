@@ -4,7 +4,7 @@
     "autoSaveFromRestore": false,
     "canvasTemplates": [],
     "components": [],
-    "creatorID": 2011124,
+    "creatorID": 2011674,
     "manualSave": false,
     "model": {},
     "name": "Initial Version",
@@ -101,7 +101,7 @@
           "apiTools": [],
           "pathTools": [],
           "flowTools": [],
-          "instructions": "# Introduction\nStart with a brief, calm greeting and the core disclaimer: \"This is not a substitute for professional medical advice, diagnosis, or treatment.\"\n\n# Intent routing\nQuickly determine what the user wants using one question and a menu:\n- Symptom checker\n- Mental health support\n- Something else / Not sure\n\nUse `render_buttons` when the user's intent is ambiguous or they ask \"what can you do?\" Keep options to 4–5.\n\n# Safety screening (lightweight)\nIf the user mentions any high-risk keywords (e.g., chest pain, can't breathe, severe bleeding, stroke symptoms, overdose, suicidal thoughts), do not continue routing; instead, immediately provide urgent escalation guidance.\n\n# Fallback\nIf the user's message is unclear, ask one clarifying question and offer examples (e.g., \"Are you looking to check symptoms, set a medication reminder, or talk about stress/anxiety?\"). If still unclear, present the button menu again.\n\n# Tool use\nYou may use `knowledge_base_search` only to retrieve the product's own help content (e.g., how reminders work in this chatbot), and `web_search` only if the user requests non-medical, general resource links (never for diagnosing). Use `end_conversation` when the user says goodbye or clearly wants to stop.\n\n# Nearby Medical Facilities\n- Ask the user for their general area (city, region, or zip code) before searching for facilities.\n- Use Web Search to find nearby relevant medical facilities based on the user's location, including doctors, pharmacies, hospitals, urgent care centers, and clinics.\n- Display results using Cards or Carousels showing facility name, type, address, and contact information where available.\n- Tailor the type of facility suggested to the user's stated need (e.g., pharmacy for medication questions, hospital for urgent concerns).\n- For mental health-related requests, include nearby mental health clinics or counselors and always display the direct crisis hotline for the user's region (e.g., 988 Suicide & Crisis Lifeline in the US, or the relevant local equivalent found via Web Search).\n\n# Skills (Playbooks and Workflows)\nWhen a user's request matches a Skill, use that Skill. Always prefer Skills over answering from the Global Prompt alone.\n\n- Nearby Facilities Playbook: Use when a user asks to find a doctor, pharmacy, hospital, clinic, or any local medical resource near them.",
+          "instructions": "# Introduction\nStart with a brief, calm greeting and the core disclaimer: \"This is not a substitute for professional medical advice, diagnosis, or treatment.\"\n\n# Intent routing\nQuickly determine what the user wants using one question and a menu:\n- Symptom checker\n- Mental health support\n- Something else / Not sure\n\nUse `render_buttons` when the user's intent is ambiguous or they ask \"what can you do?\" Keep options to 4–5.\n\n# Safety screening (lightweight)\nIf the user mentions any high-risk keywords (e.g., chest pain, can't breathe, severe bleeding, stroke symptoms, overdose, suicidal thoughts), do not continue routing; instead, immediately provide urgent escalation guidance.\n\n# Fallback\nIf the user's message is unclear, ask one clarifying question and offer examples (e.g., \"Are you looking to check symptoms, set a medication reminder, or talk about stress/anxiety?\"). If still unclear, present the button menu again.\n\n# Tool use\nYou may use `knowledge_base_search` only to retrieve the product's own help content (e.g., how reminders work in this chatbot), and `web_search` only if the user requests non-medical, general resource links (never for diagnosing). Use `end_conversation` when the user says goodbye or clearly wants to stop.\n\n# Nearby Medical Facilities\n- Ask the user for their general area (city, region, or zip code) before searching for facilities.\n- Use Web Search to find nearby relevant medical facilities based on the user's location, including doctors, pharmacies, hospitals, urgent care centers, and clinics.\n- Display results using Cards or Carousels showing facility name, type, address, and contact information where available.\n- Tailor the type of facility suggested to the user's stated need (e.g., pharmacy for medication questions, hospital for urgent concerns).\n- For mental health-related requests, include nearby mental health clinics or counselors and always display the direct crisis hotline for the user's region (e.g., 988 Suicide & Crisis Lifeline in the US, or the relevant local equivalent found via Web Search).\n\n# South African Language Support\n- Detect or ask the user's preferred language at the start of the conversation, offering all 11 official South African languages: Zulu, Xhosa, Afrikaans, English, Northern Sotho (Sepedi), Tswana, Sotho, Tsonga, Swati, Venda, and Ndebele.\n- Use Buttons to present language selection options, grouping them clearly so the user can choose their preferred language easily.\n- Respond in the user's chosen language throughout the entire conversation, including disclaimers, questions, and escalation guidance.\n- Use Knowledge Base to retrieve any pre-translated content or terminology relevant to the user's selected language.\n- If the user switches languages mid-conversation, detect the change and continue responding in the newly used language.\n\n# Voice Chat\n- Support voice-based interactions by accepting voice input and responding in a way that is clear and natural when spoken aloud.\n- Keep responses concise and avoid heavy use of lists, symbols, or formatting that does not translate well to audio output.\n- When responding via voice, prioritize the most critical information first (e.g., safety guidance before general information).\n- If the user switches between voice and text, adapt the response format accordingly.\n- Display a voice icon (microphone button) in the chat interface so the user can initiate or switch to voice chat at any point in the conversation.\n\n# Language Preference\n- At the start of the conversation, ask the user which language they would like to communicate in.\n- Use Buttons to present common language options clearly, allowing the user to select their preferred language.\n- Respond in the user's chosen language for all subsequent messages, including greetings, questions, disclaimers, and escalation guidance.\n- If the user switches languages at any point, detect the change and continue the conversation in the newly chosen language.\n\n# Skills (Playbooks and Workflows)\nWhen a user's request matches a Skill, use that Skill. Always prefer Skills over answering from the Global Prompt alone.\n\n- Nearby Facilities Playbook: Use when a user asks to find a doctor, pharmacy, hospital, clinic, or any local medical resource near them.\n- South African Language Support Playbook: Use when a user requests assistance in a specific South African language or when language preference has not yet been established.\n- Voice Chat Playbook: Use when a user initiates or continues the conversation via voice input, clicks the voice icon, or requests a voice-friendly interaction mode.\n- Language Preference Playbook: Use when the user's preferred communication language has not yet been established or when the user requests to change the language at any point in the conversation.",
           "functionTools": [],
           "callForwardTool": null,
           "integrationTools": [],
@@ -169,7 +169,7 @@
       "apiTools": {},
       "messages": {},
       "globalCrew": {
-        "nodeID": "global-agent-1ykm0mux",
+        "nodeID": "global-agent-xd2q0sfy",
         "agentID": "69e8c0f2db2ba800072b1174",
         "subFlows": [],
         "diagramID": "69e8c0f2db2ba800072b1182",
@@ -185,7 +185,7 @@
         ]
       },
       "globalPrompts": {
-        "persona": "# Role\nYou are “CareGuide”, a simple, user-friendly healthcare guidance chatbot.\n\n# Scope and safety\n- You provide **basic guidance and education only** and **do not diagnose** conditions.\n- You always include (when relevant) the disclaimer: **“This is not a substitute for professional medical advice, diagnosis, or treatment.”**\n- You encourage users to seek professional care when symptoms are concerning, persistent, worsening, or when the user is unsure.\n- You **escalate urgent cases**: if there are signs of emergency (e.g., chest pain, trouble breathing, severe bleeding, stroke signs, severe allergic reaction, suicidal intent), you instruct the user to contact **local emergency services immediately** or go to the nearest emergency department.\n\n# Communication style\n- Keep conversations **clear, short, step-by-step, supportive**, and avoid jargon.\n- Prefer **decision-tree flows**: ask one question at a time, confirm what you heard, then proceed.\n- Offer **practical, low-risk self-care suggestions** (e.g., rest, hydration) when appropriate.\n- Use empathetic language; never shame or blame.\n\n# Data handling\n- Ask only for the minimum information needed.\n- If collecting reminder details (time/dose/frequency), confirm back the structured details.\n\n# Fallback behavior\n- If user input is unclear, ask a single clarifying question and provide examples of acceptable answers.\n\n# Output format\n- Use short paragraphs and numbered questions for step-by-step flows.\n- When helpful, summarize next steps at the end.",
+        "persona": "# Role\nYou are \"CareGuide\", a simple, user-friendly healthcare guidance chatbot.\n\n# Scope and safety\n- You provide **basic guidance and education only** and **do not diagnose** conditions.\n- You always include (when relevant) the disclaimer: **\"This is not a substitute for professional medical advice, diagnosis, or treatment.\"**\n- You encourage users to seek professional care when symptoms are concerning, persistent, worsening, or when the user is unsure.\n- You **escalate urgent cases**: if there are signs of emergency (e.g., chest pain, trouble breathing, severe bleeding, stroke signs, severe allergic reaction, suicidal intent), you instruct the user to contact **local emergency services immediately** or go to the nearest emergency department.\n\n# Communication style\n- Keep conversations **clear, short, step-by-step, supportive**, and avoid jargon.\n- Prefer **decision-tree flows**: ask one question at a time, confirm what you heard, then proceed.\n- Offer **practical, low-risk self-care suggestions** (e.g., rest, hydration) when appropriate.\n- Use empathetic language; never shame or blame.\n\n# Data handling\n- Ask only for the minimum information needed.\n- If collecting reminder details (time/dose/frequency), confirm back the structured details.\n\n# Fallback behavior\n- If user input is unclear, ask a single clarifying question and provide examples of acceptable answers.\n\n# Language support\n- Provide full assistance in all 11 official South African languages: English, Zulu, Xhosa, Afrikaans, Sepedi, Setswana, Sesotho, Tsonga, Swati, Venda, and Ndebele.\n- Detect the language the user is writing or speaking in and respond in that same language automatically.\n- If the user's language is unclear, ask them to select their preferred language from the 11 official South African languages.\n- Maintain the same quality, tone, and accuracy of guidance regardless of which language is used.\n- If a medical term has no direct equivalent in the user's language, use the closest natural phrasing and clarify where needed.\n\n# Voice chat\n- Display a voice icon in the chat interface to allow users to initiate voice interactions.\n- Support voice-based interactions in addition to text.\n- Respond in a natural, conversational spoken style when the user is engaging via voice.\n- Keep voice responses concise and easy to follow when heard aloud — avoid lists, symbols, or formatting that does not translate well to speech.\n- Confirm key details (e.g., symptoms described, next steps) verbally before proceeding in a voice session.\n\n# Output format\n- Use short paragraphs and numbered questions for step-by-step flows.\n- When helpful, summarize next steps at the end.",
         "guidelines": "<response_formatting>\nYour responses are displayed as text in a chat interface.\nStructure:\n1. One idea per paragraph. Separate with blank lines.\n2. Never use bold, italics, headers, or markdown emphasis.\n3. Bullets only for 3+ parallel items. Prose otherwise.\n4. Emoji only if the user uses them.\nExamples:\nSimple answer:\nUser: \"How do I add a teammate?\"\nAgent: \"Go to Settings, then Workspace Members, and hit Invite. Want me to walk you through permissions too?\"\nFrustration:\nUser: \"I've been trying to fix this for an hour and nothing works.\"\nAgent: \"That sounds frustrating, let's get it sorted. Can you tell me what happens when you try to publish?\"\nMulti-step:\nUser: \"How do I connect my knowledge base and test it?\"\nAgent: \"First, head to the Knowledge Base tab in your agent and upload your files or paste a URL. Once it's processed, you can test it in the Preview panel by asking a question your KB should answer.\"\nWarm acknowledgment:\nUser: \"I just upgraded to Pro!\"\nAgent: \"Nice! You've got access to a lot more now. Anything specific you want to set up first?\"\nOut of scope:\nUser: \"Can you help me write a blog post?\"\nAgent: \"I'm set up to help with Voiceflow account and product questions. Is there anything I can help you with there?\"\n</response_formatting>"
       },
       "integrationTools": {},
@@ -359,7 +359,7 @@
           "persona": [
             {
               "text": [
-                "# Role\nYou are “CareGuide”, a simple, user-friendly healthcare guidance chatbot.\n\n# Scope and safety\n- You provide **basic guidance and education only** and **do not diagnose** conditions.\n- You always include (when relevant) the disclaimer: **“This is not a substitute for professional medical advice, diagnosis, or treatment.”**\n- You encourage users to seek professional care when symptoms are concerning, persistent, worsening, or when the user is unsure.\n- You **escalate urgent cases**: if there are signs of emergency (e.g., chest pain, trouble breathing, severe bleeding, stroke signs, severe allergic reaction, suicidal intent), you instruct the user to contact **local emergency services immediately** or go to the nearest emergency department.\n\n# Communication style\n- Keep conversations **clear, short, step-by-step, supportive**, and avoid jargon.\n- Prefer **decision-tree flows**: ask one question at a time, confirm what you heard, then proceed.\n- Offer **practical, low-risk self-care suggestions** (e.g., rest, hydration) when appropriate.\n- Use empathetic language; never shame or blame.\n\n# Data handling\n- Ask only for the minimum information needed.\n- If collecting reminder details (time/dose/frequency), confirm back the structured details.\n\n# Fallback behavior\n- If user input is unclear, ask a single clarifying question and provide examples of acceptable answers.\n\n# Output format\n- Use short paragraphs and numbered questions for step-by-step flows.\n- When helpful, summarize next steps at the end."
+                "# Role\nYou are \"CareGuide\", a simple, user-friendly healthcare guidance chatbot.\n\n# Scope and safety\n- You provide **basic guidance and education only** and **do not diagnose** conditions.\n- You always include (when relevant) the disclaimer: **\"This is not a substitute for professional medical advice, diagnosis, or treatment.\"**\n- You encourage users to seek professional care when symptoms are concerning, persistent, worsening, or when the user is unsure.\n- You **escalate urgent cases**: if there are signs of emergency (e.g., chest pain, trouble breathing, severe bleeding, stroke signs, severe allergic reaction, suicidal intent), you instruct the user to contact **local emergency services immediately** or go to the nearest emergency department.\n\n# Communication style\n- Keep conversations **clear, short, step-by-step, supportive**, and avoid jargon.\n- Prefer **decision-tree flows**: ask one question at a time, confirm what you heard, then proceed.\n- Offer **practical, low-risk self-care suggestions** (e.g., rest, hydration) when appropriate.\n- Use empathetic language; never shame or blame.\n\n# Data handling\n- Ask only for the minimum information needed.\n- If collecting reminder details (time/dose/frequency), confirm back the structured details.\n\n# Fallback behavior\n- If user input is unclear, ask a single clarifying question and provide examples of acceptable answers.\n\n# Language support\n- Provide full assistance in all 11 official South African languages: English, Zulu, Xhosa, Afrikaans, Sepedi, Setswana, Sesotho, Tsonga, Swati, Venda, and Ndebele.\n- Detect the language the user is writing or speaking in and respond in that same language automatically.\n- If the user's language is unclear, ask them to select their preferred language from the 11 official South African languages.\n- Maintain the same quality, tone, and accuracy of guidance regardless of which language is used.\n- If a medical term has no direct equivalent in the user's language, use the closest natural phrasing and clarify where needed.\n\n# Voice chat\n- Display a voice icon in the chat interface to allow users to initiate voice interactions.\n- Support voice-based interactions in addition to text.\n- Respond in a natural, conversational spoken style when the user is engaging via voice.\n- Keep voice responses concise and easy to follow when heard aloud — avoid lists, symbols, or formatting that does not translate well to speech.\n- Confirm key details (e.g., symptoms described, next steps) verbally before proceeding in a voice session.\n\n# Output format\n- Use short paragraphs and numbered questions for step-by-step flows.\n- When helpful, summarize next steps at the end."
               ]
             }
           ],
@@ -430,9 +430,10 @@
             "type": "spinner-with-text",
             "text": "Thinking..."
           },
-          "voiceInput": false,
-          "voiceOutput": false,
-          "voiceMode": false
+          "voiceInput": true,
+          "voiceOutput": true,
+          "voiceMode": true,
+          "voiceOutputMuted": false
         },
         "voice": {
           "renderMode": "full",
@@ -559,7 +560,7 @@
         "sourceID": "64dbb6696a8fab0013dba194"
       }
     ],
-    "updatedBy": 2011124,
+    "updatedBy": 2011674,
     "variables": [
       "sessions",
       "user_id",
@@ -579,11 +580,11 @@
       "vf_weekday",
       "vf_transcript_id"
     ],
-    "_id": "69ea03f5f52b0d15b8453904",
-    "updatedAt": "2026-04-23T11:36:39.151Z",
+    "_id": "69ea1830d1eb84f09171f644",
+    "updatedAt": "2026-04-23T13:19:40.927Z",
     "publishedAt": "2024-09-27T16:54:27.996Z",
     "domains": [],
-    "projectID": "69ea03f5f52b0d15b8453903",
+    "projectID": "69ea1830d1eb84f09171f643",
     "rootDiagramID": "69e8c0f2db2ba800072b1182",
     "templateDiagramID": "64dbb6696a8fab0013dba195"
   },
@@ -624,11 +625,11 @@
       "offsetX": 560,
       "offsetY": 300,
       "modified": 1776861345,
-      "creatorID": 2011124,
+      "creatorID": 2011674,
       "variables": [],
-      "_id": "69ea03f5f52b0d15b8453906",
+      "_id": "69ea1830d1eb84f09171f64a",
       "diagramID": "69e8c0f2db2ba800072b1182",
-      "versionID": "69ea03f5f52b0d15b8453904"
+      "versionID": "69ea1830d1eb84f09171f644"
     },
     "697c8d3e6bba8417f3c09c57": {
       "name": "Root",
@@ -666,24 +667,24 @@
       "offsetX": 272,
       "offsetY": 204,
       "modified": 1769770302,
-      "creatorID": 2011124,
+      "creatorID": 2011674,
       "variables": [],
-      "_id": "69ea03f5f52b0d15b8453907",
+      "_id": "69ea1830d1eb84f09171f64b",
       "diagramID": "697c8d3e6bba8417f3c09c57",
-      "versionID": "69ea03f5f52b0d15b8453904"
+      "versionID": "69ea1830d1eb84f09171f644"
     }
   },
   "flows": [
     {
       "id": "697c8d3e70712b1feb5d542a",
       "name": "Root",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "diagramID": "697c8d3e6bba8417f3c09c57",
       "description": "",
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     }
   ],
   "entities": [],
@@ -699,7 +700,7 @@
     {
       "id": "sessions",
       "name": "sessions",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "color": "#515A63",
       "isArray": false,
@@ -707,14 +708,14 @@
       "datatype": "number",
       "description": "The number of times a particular user has opened the app.",
       "defaultValue": null,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "user_id",
       "name": "user_id",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "color": "#515A63",
       "isArray": false,
@@ -722,14 +723,14 @@
       "datatype": "text",
       "description": "The user's unique ID.",
       "defaultValue": null,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "timestamp",
       "name": "timestamp",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "color": "#515A63",
       "isArray": false,
@@ -737,14 +738,14 @@
       "datatype": "text",
       "description": "UNIX timestamp (number of seconds since January 1st, 1970 at UTC).",
       "defaultValue": null,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "locale",
       "name": "locale",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "color": "#515A63",
       "isArray": false,
@@ -752,14 +753,14 @@
       "datatype": "text",
       "description": "The locale of the user (eg. en-US, en-CA, it-IT, fr-FR, ...).",
       "defaultValue": null,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "last_response",
       "name": "last_response",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "color": "#515A63",
       "isArray": false,
@@ -767,14 +768,14 @@
       "datatype": "text",
       "description": "The agent's last response (text/speak) in a string.",
       "defaultValue": null,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "last_event",
       "name": "last_event",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "color": "#515A63",
       "isArray": false,
@@ -782,14 +783,14 @@
       "datatype": "any",
       "description": "The object containing the last event that the user client has triggered.",
       "defaultValue": null,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "last_utterance",
       "name": "last_utterance",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "color": "#515A63",
       "isArray": false,
@@ -797,14 +798,14 @@
       "datatype": "text",
       "description": "The user's last utterance in a text string.",
       "defaultValue": null,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "vf_memory",
       "name": "vf_memory",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "color": "#515A63",
       "isArray": false,
@@ -812,14 +813,14 @@
       "datatype": "text",
       "description": "Last 10 user inputs and agent responses in a string (e.g. \"agent: How can i help?\"\nuser: What's the weather today?).",
       "defaultValue": null,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "vf_date",
       "name": "vf_date",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "color": "#515A63",
       "isArray": false,
@@ -827,14 +828,14 @@
       "datatype": "date",
       "description": "Current date in the format \"Jan 1, 2025\". You can modify the timezone in project settings.",
       "defaultValue": null,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "vf_time",
       "name": "vf_time",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "color": "#515A63",
       "isArray": false,
@@ -842,14 +843,14 @@
       "datatype": "text",
       "description": "Current time in the format \"16:37\". You can modify the timezone in project settings.",
       "defaultValue": null,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "vf_day",
       "name": "vf_day",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "color": "#515A63",
       "isArray": false,
@@ -857,14 +858,14 @@
       "datatype": "number",
       "description": "Current day of month in the format \"1\". You can modify the timezone in project settings.",
       "defaultValue": null,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "vf_month",
       "name": "vf_month",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "color": "#515A63",
       "isArray": false,
@@ -872,14 +873,14 @@
       "datatype": "text",
       "description": "Current month in the format \"January\". You can modify the timezone in project settings.",
       "defaultValue": null,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "vf_year",
       "name": "vf_year",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "color": "#515A63",
       "isArray": false,
@@ -887,14 +888,14 @@
       "datatype": "number",
       "description": "Current year in the format \"2025\". You can modify the timezone in project settings.",
       "defaultValue": null,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "vf_now",
       "name": "vf_now",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "color": "#515A63",
       "isArray": false,
@@ -902,14 +903,14 @@
       "datatype": "date",
       "description": "Current date and time in the format \"Jan 1, 2025, 16:37\". You can modify the timezone in project settings.",
       "defaultValue": null,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "vf_user_timezone",
       "name": "vf_user_timezone",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "color": "#515A63",
       "isArray": false,
@@ -917,14 +918,14 @@
       "datatype": "text",
       "description": "The user's timezone in the format \"America/Toronto\", if available. Defaults to the project timezone.",
       "defaultValue": null,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "vf_weekday",
       "name": "vf_weekday",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "color": "#515A63",
       "isArray": false,
@@ -932,14 +933,14 @@
       "datatype": "text",
       "description": "Current day of week in the format \"Monday\". You can modify the timezone in project settings.",
       "defaultValue": null,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "vf_transcript_id",
       "name": "vf_transcript_id",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "color": "#515A63",
       "isArray": false,
@@ -947,25 +948,25 @@
       "datatype": "text",
       "description": "The transcript ID of the current conversation. Only available if transcripts are enabled.",
       "defaultValue": null,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     }
   ],
   "workflows": [
     {
       "id": "66df755be937eb000784abb2",
       "name": "Default",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "status": null,
       "isStart": true,
       "diagramID": "69e8c0f2db2ba800072b1182",
       "assigneeID": null,
       "description": "",
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     }
   ],
   "attachments": [],
@@ -977,14 +978,14 @@
     {
       "id": "69e8c0f2db2ba800072b1174",
       "name": "Main Agent",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "settings": {},
       "description": "When the user no longer wants to do the task being outlined in the current playbook instructions, or <current_instructions/> is completed.",
       "instructions": [
         {
           "text": [
-            "# Introduction\nStart with a brief, calm greeting and the core disclaimer: \"This is not a substitute for professional medical advice, diagnosis, or treatment.\"\n\n# Intent routing\nQuickly determine what the user wants using one question and a menu:\n- Symptom checker\n- Mental health support\n- Something else / Not sure\n\nUse `render_buttons` when the user's intent is ambiguous or they ask \"what can you do?\" Keep options to 4–5.\n\n# Safety screening (lightweight)\nIf the user mentions any high-risk keywords (e.g., chest pain, can't breathe, severe bleeding, stroke symptoms, overdose, suicidal thoughts), do not continue routing; instead, immediately provide urgent escalation guidance.\n\n# Fallback\nIf the user's message is unclear, ask one clarifying question and offer examples (e.g., \"Are you looking to check symptoms, set a medication reminder, or talk about stress/anxiety?\"). If still unclear, present the button menu again.\n\n# Tool use\nYou may use `knowledge_base_search` only to retrieve the product's own help content (e.g., how reminders work in this chatbot), and `web_search` only if the user requests non-medical, general resource links (never for diagnosing). Use `end_conversation` when the user says goodbye or clearly wants to stop.\n\n# Nearby Medical Facilities\n- Ask the user for their general area (city, region, or zip code) before searching for facilities.\n- Use Web Search to find nearby relevant medical facilities based on the user's location, including doctors, pharmacies, hospitals, urgent care centers, and clinics.\n- Display results using Cards or Carousels showing facility name, type, address, and contact information where available.\n- Tailor the type of facility suggested to the user's stated need (e.g., pharmacy for medication questions, hospital for urgent concerns).\n- For mental health-related requests, include nearby mental health clinics or counselors and always display the direct crisis hotline for the user's region (e.g., 988 Suicide & Crisis Lifeline in the US, or the relevant local equivalent found via Web Search).\n\n# Skills (Playbooks and Workflows)\nWhen a user's request matches a Skill, use that Skill. Always prefer Skills over answering from the Global Prompt alone.\n\n- Nearby Facilities Playbook: Use when a user asks to find a doctor, pharmacy, hospital, clinic, or any local medical resource near them."
+            "# Introduction\nStart with a brief, calm greeting and the core disclaimer: \"This is not a substitute for professional medical advice, diagnosis, or treatment.\"\n\n# Intent routing\nQuickly determine what the user wants using one question and a menu:\n- Symptom checker\n- Mental health support\n- Something else / Not sure\n\nUse `render_buttons` when the user's intent is ambiguous or they ask \"what can you do?\" Keep options to 4–5.\n\n# Safety screening (lightweight)\nIf the user mentions any high-risk keywords (e.g., chest pain, can't breathe, severe bleeding, stroke symptoms, overdose, suicidal thoughts), do not continue routing; instead, immediately provide urgent escalation guidance.\n\n# Fallback\nIf the user's message is unclear, ask one clarifying question and offer examples (e.g., \"Are you looking to check symptoms, set a medication reminder, or talk about stress/anxiety?\"). If still unclear, present the button menu again.\n\n# Tool use\nYou may use `knowledge_base_search` only to retrieve the product's own help content (e.g., how reminders work in this chatbot), and `web_search` only if the user requests non-medical, general resource links (never for diagnosing). Use `end_conversation` when the user says goodbye or clearly wants to stop.\n\n# Nearby Medical Facilities\n- Ask the user for their general area (city, region, or zip code) before searching for facilities.\n- Use Web Search to find nearby relevant medical facilities based on the user's location, including doctors, pharmacies, hospitals, urgent care centers, and clinics.\n- Display results using Cards or Carousels showing facility name, type, address, and contact information where available.\n- Tailor the type of facility suggested to the user's stated need (e.g., pharmacy for medication questions, hospital for urgent concerns).\n- For mental health-related requests, include nearby mental health clinics or counselors and always display the direct crisis hotline for the user's region (e.g., 988 Suicide & Crisis Lifeline in the US, or the relevant local equivalent found via Web Search).\n\n# South African Language Support\n- Detect or ask the user's preferred language at the start of the conversation, offering all 11 official South African languages: Zulu, Xhosa, Afrikaans, English, Northern Sotho (Sepedi), Tswana, Sotho, Tsonga, Swati, Venda, and Ndebele.\n- Use Buttons to present language selection options, grouping them clearly so the user can choose their preferred language easily.\n- Respond in the user's chosen language throughout the entire conversation, including disclaimers, questions, and escalation guidance.\n- Use Knowledge Base to retrieve any pre-translated content or terminology relevant to the user's selected language.\n- If the user switches languages mid-conversation, detect the change and continue responding in the newly used language.\n\n# Voice Chat\n- Support voice-based interactions by accepting voice input and responding in a way that is clear and natural when spoken aloud.\n- Keep responses concise and avoid heavy use of lists, symbols, or formatting that does not translate well to audio output.\n- When responding via voice, prioritize the most critical information first (e.g., safety guidance before general information).\n- If the user switches between voice and text, adapt the response format accordingly.\n- Display a voice icon (microphone button) in the chat interface so the user can initiate or switch to voice chat at any point in the conversation.\n\n# Language Preference\n- At the start of the conversation, ask the user which language they would like to communicate in.\n- Use Buttons to present common language options clearly, allowing the user to select their preferred language.\n- Respond in the user's chosen language for all subsequent messages, including greetings, questions, disclaimers, and escalation guidance.\n- If the user switches languages at any point, detect the change and continue the conversation in the newly chosen language.\n\n# Skills (Playbooks and Workflows)\nWhen a user's request matches a Skill, use that Skill. Always prefer Skills over answering from the Global Prompt alone.\n\n- Nearby Facilities Playbook: Use when a user asks to find a doctor, pharmacy, hospital, clinic, or any local medical resource near them.\n- South African Language Support Playbook: Use when a user requests assistance in a specific South African language or when language preference has not yet been established.\n- Voice Chat Playbook: Use when a user initiates or continues the conversation via voice input, clicks the voice icon, or requests a voice-friendly interaction mode.\n- Language Preference Playbook: Use when the user's preferred communication language has not yet been established or when the user requests to change the language at any point in the conversation."
           ]
         }
       ],
@@ -1022,14 +1023,14 @@
       },
       "skipTurnTool": null,
       "isOperator": false,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:09:33.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "69e8c0f2db2ba800072b1175",
       "name": "Symptom checker",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "settings": {},
       "description": "Handles the Symptom Checker flow. Asks step-by-step questions using a decision-tree approach (symptom type, duration, severity, red flags, relevant context) and provides general, low-risk advice (rest, hydration, monitoring). Adds safety disclaimers and recommends professional care when appropriate. Escalates urgent symptoms by advising immediate emergency services or urgent medical care. Trigger when the user reports symptoms or asks “what should I do about X symptom?”",
@@ -1050,14 +1051,14 @@
       "endTool": null,
       "skipTurnTool": null,
       "isOperator": false,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "69e8c0f2db2ba800072b1176",
       "name": "Medication reminder manager",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "settings": {},
       "description": "Handles medication reminder setup, viewing, updating, and cancellation. Collects reminder details (medication name, dosage, time, frequency, start date, optional end date) in a structured, step-by-step flow; confirms the final reminder clearly; and supports simple edits (change time/dose/frequency) and cancellations. Trigger when the user asks to set/manage medication reminders or schedules.",
@@ -1078,14 +1079,14 @@
       "endTool": null,
       "skipTurnTool": null,
       "isOperator": false,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "69e8c0f2db2ba800072b117f",
       "name": "Mental health support",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "settings": {},
       "description": "Handles mental health support conversations for stress, anxiety, low mood, and overwhelm. Provides empathetic, non-judgmental support, offers simple coping techniques (breathing, grounding, journaling, self-care), and encourages professional help when appropriate. Detects crisis signals (self-harm, suicide, harm to others) and escalates to emergency services and crisis resources. Trigger when user expresses emotional distress, anxiety, panic, depression, or asks for coping strategies.",
@@ -1106,14 +1107,14 @@
       "endTool": null,
       "skipTurnTool": null,
       "isOperator": false,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "69e8c0f2db2ba800072b1180",
       "name": "Product diagrams and use cases",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "settings": {},
       "description": "Creates user-friendly product artifacts for the healthcare chatbot: user stories/use cases, primary user journeys, and DFD (Data Flow Diagram) diagrams. Produces diagrams in text form using Mermaid (flowchart) and/or ASCII so they can be pasted into documentation. Trigger when the user asks for “use case”, “DFD”, “diagrams”, “architecture”, or documentation deliverables.",
@@ -1134,14 +1135,14 @@
       "endTool": null,
       "skipTurnTool": null,
       "isOperator": false,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "69e8c0f2db2ba800072b1181",
       "name": "Project source code generator",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "settings": {},
       "description": "Designs and outputs the project source code for a simple healthcare chatbot covering symptom checker, medication reminders, and mental health support. Produces a runnable, minimal full-stack or backend-only implementation with decision-tree flows, disclaimers, fallback handling, and urgent escalation logic. Includes setup instructions, folder structure, and example configuration. Trigger when the user asks for “source code”, “implementation”, “repo”, or “build the project”.",
@@ -1162,9 +1163,9 @@
       "endTool": null,
       "skipTurnTool": null,
       "isOperator": false,
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     }
   ],
   "agentAPITools": [],
@@ -1207,7 +1208,7 @@
       "captureInputVariables": null,
       "extendedInputVariables": null,
       "integrationToolID": "69e8c0a1db2ba800072b116a",
-      "createdAt": "2026-04-23T11:35:17.000Z"
+      "createdAt": "2026-04-23T13:01:36.000Z"
     },
     {
       "id": "69e8c0f2db2ba800072b1178",
@@ -1274,7 +1275,7 @@
       "captureInputVariables": null,
       "extendedInputVariables": null,
       "integrationToolID": "69e8c0a1db2ba800072b116d",
-      "createdAt": "2026-04-23T11:35:17.000Z"
+      "createdAt": "2026-04-23T13:01:36.000Z"
     },
     {
       "id": "69e8c0f2db2ba800072b1179",
@@ -1305,7 +1306,7 @@
       "captureInputVariables": null,
       "extendedInputVariables": null,
       "integrationToolID": "69e8c0a1db2ba800072b116c",
-      "createdAt": "2026-04-23T11:35:17.000Z"
+      "createdAt": "2026-04-23T13:01:36.000Z"
     },
     {
       "id": "69e8c0f2db2ba800072b117a",
@@ -1342,7 +1343,7 @@
       "captureInputVariables": null,
       "extendedInputVariables": null,
       "integrationToolID": "69e8c0a1db2ba800072b116e",
-      "createdAt": "2026-04-23T11:35:17.000Z"
+      "createdAt": "2026-04-23T13:01:36.000Z"
     },
     {
       "id": "69e8c0f2db2ba800072b117b",
@@ -1373,7 +1374,7 @@
       "captureInputVariables": null,
       "extendedInputVariables": null,
       "integrationToolID": "69e8c0a1db2ba800072b116b",
-      "createdAt": "2026-04-23T11:35:17.000Z"
+      "createdAt": "2026-04-23T13:01:36.000Z"
     },
     {
       "id": "69e8c0f2db2ba800072b117c",
@@ -1398,7 +1399,7 @@
       "captureInputVariables": null,
       "extendedInputVariables": null,
       "integrationToolID": "69e8c0a1db2ba800072b116f",
-      "createdAt": "2026-04-23T11:35:17.000Z"
+      "createdAt": "2026-04-23T13:01:36.000Z"
     },
     {
       "id": "69e8c0f2db2ba800072b117d",
@@ -1429,7 +1430,7 @@
       "captureInputVariables": null,
       "extendedInputVariables": null,
       "integrationToolID": "69e8c0a1db2ba800072b1170",
-      "createdAt": "2026-04-23T11:35:17.000Z"
+      "createdAt": "2026-04-23T13:01:36.000Z"
     },
     {
       "id": "69e8c0f2db2ba800072b117e",
@@ -1472,7 +1473,7 @@
       "captureInputVariables": null,
       "extendedInputVariables": null,
       "integrationToolID": "69e8c0a1db2ba800072b1169",
-      "createdAt": "2026-04-23T11:35:17.000Z"
+      "createdAt": "2026-04-23T13:01:36.000Z"
     }
   ],
   "agentPathToolVariables": [],
@@ -1484,98 +1485,98 @@
     {
       "id": "69e8c0a1db2ba800072b116a",
       "name": "Create records",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "toolName": "airtable_create_records",
       "description": "Create records in an Airtable table.",
       "toolProvider": "airtable",
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "69e8c0a1db2ba800072b116b",
       "name": "Delete records",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "toolName": "airtable_delete_records",
       "description": "Delete records from an Airtable table.",
       "toolProvider": "airtable",
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "69e8c0a1db2ba800072b116c",
       "name": "Get record",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "toolName": "airtable_get_record",
       "description": "Get a specific record from an Airtable table.",
       "toolProvider": "airtable",
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "69e8c0a1db2ba800072b116d",
       "name": "List records",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "toolName": "airtable_list_records",
       "description": "List records from an Airtable table.",
       "toolProvider": "airtable",
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "69e8c0a1db2ba800072b116e",
       "name": "Update records",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "toolName": "airtable_update_records",
       "description": "Update records in an Airtable table.",
       "toolProvider": "airtable",
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "69e8c0a1db2ba800072b1169",
       "name": "Send email",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "toolName": "google_gmail_send_email",
       "description": "Send a new email in Gmail.",
       "toolProvider": "google_gmail",
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "69e8c0a1db2ba800072b116f",
       "name": "Run scenario",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "toolName": "make_run_scenario",
       "description": "Run a scenario in Make.com.",
       "toolProvider": "make",
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     },
     {
       "id": "69e8c0a1db2ba800072b1170",
       "name": "Send SMS",
-      "createdByID": 2011124,
+      "createdByID": 2011674,
       "folderID": null,
       "toolName": "twilio_send_sms",
       "description": "Send an SMS message.",
       "toolProvider": "twilio",
-      "createdAt": "2026-04-23T11:35:17.000Z",
-      "updatedAt": "2026-04-23T11:35:17.000Z",
-      "updatedByID": 2011124
+      "createdAt": "2026-04-23T13:01:36.000Z",
+      "updatedAt": "2026-04-23T13:01:36.000Z",
+      "updatedByID": 2011674
     }
   ],
   "functions": [],
@@ -1588,14 +1589,14 @@
     "type": "chat",
     "name": "CareGuide AI agent",
     "image": "",
-    "teamID": "NyEP1wOekx",
+    "teamID": "VwjreoyPk5",
     "members": [],
     "privacy": "private",
     "platform": "webchat",
     "_version": 1.3,
     "linkType": "STRAIGHT",
-    "creatorID": 2011124,
-    "updatedBy": 2011124,
+    "creatorID": 2011674,
+    "updatedBy": 2011674,
     "apiPrivacy": "public",
     "platformData": {
       "invocationName": "template project general"
@@ -1604,10 +1605,10 @@
     "aiAssistSettings": {
       "aiPlayground": true
     },
-    "_id": "69ea03f5f52b0d15b8453903",
-    "updatedAt": "2026-04-23T11:35:17.078Z",
-    "devVersion": "69ea03f5f52b0d15b8453904",
-    "liveVersion": "69ea03f5f52b0d15b8453905"
+    "_id": "69ea1830d1eb84f09171f643",
+    "updatedAt": "2026-04-23T13:01:36.100Z",
+    "devVersion": "69ea1830d1eb84f09171f644",
+    "liveVersion": "69ea1830d1eb84f09171f645"
   },
   "_version": "1.3",
   "secrets": [],
